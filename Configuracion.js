@@ -20,7 +20,7 @@ let correo = "";
 //Editar getRestauranteURL en caso de que se requiera cambiar el encabezado de la url
 
 export function getRestauranteURL(){ 
-  return "https://proyectouam.herokuapp.com/v1/restaurantes";
+  return "https://proyectouam.herokuapp.com/v1/restaurantes/";
 }
 
 export function setRestauranteid(id){ 
