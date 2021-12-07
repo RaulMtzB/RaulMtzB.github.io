@@ -19,8 +19,16 @@ let correo = "";
 //Anterior http://localhost:8080/v1/restaurantes/
 //Editar getRestauranteURL en caso de que se requiera cambiar el encabezado de la url
 
-export function getRestauranteURL(){ 
+export function getRestauranteURLC(){ 
+  return "https://proyectouam.herokuapp.com/v1/restaurantes/";
+}
+
+export function getRestauranteURLR(){ 
   return "https://proyectouam.herokuapp.com/v1/restaurants/";
+}
+
+export function getRestauranteURL(){ 
+  return "https://proyectouam.herokuapp.com/v1/";
 }
 
 export function setRestauranteid(id){ 
