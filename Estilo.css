@@ -1,0 +1,479 @@
+.button {
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #2472a3;
+    display: inline-block;
+    font-size: 12px;
+    margin: 1px 1px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.button.botonObscuro{
+    width: 108px;
+    background-color: #253340;
+    border-radius: 5px;
+}
+
+.button.botonObscuro:hover{
+    background-color: #607d97
+}
+
+.button.botonObscuroDeshabilitado{
+    width: 108px;
+    background-color: gray;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+.button.botonObscuroDeshabilitado:hover{
+    background-color: gray;
+}
+
+.button:hover {
+    background-color: #253340;
+}
+
+.seleccionable{
+    color: black;
+}
+
+
+.seleccionable:hover{
+    cursor: pointer;
+    color:darkcyan;
+}
+
+.p1{
+    text-align: center;
+}
+
+.h6{
+    text-align: center;
+}
+
+.bg-modal1{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 10;
+}
+
+
+.modal-content1{
+    width: 750px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    position: relative;
+    z-index: 10;
+}
+
+.modal-content2{
+    width: 400px;
+    height: 600px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    position: relative;
+    z-index: 10;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 50px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.centrado{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+    
+.button.addbutton{
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: #2472a3;
+    border-radius: 50%;
+    color: #2472a3;
+    padding: 1px 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    display: inline-block;
+    font-size: 50px;
+    margin: 0px 0px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button.roundbutton{
+    position: relative;
+    top: 60%;
+    left: 25%;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: white;
+    border-radius: 50%;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #253340;
+    display: inline-block;
+    font-size: 20px;
+    margin: 0px 0px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.etiqueta{
+    position: absolute;
+    top: -15px;
+    left: 155px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 18px 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ddb811;
+    display: inline-block;
+    font-size: 30px;
+    margin: 0px 0px;
+}
+
+.tarjetas{
+    position: relative;
+    width: 280px;
+    height: 320px;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+}
+
+.carta{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 300px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: solid #e3e6f0;
+    border-radius: 0.35rem;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+.carta:hover{
+    border: solid #b0beeb;
+}
+
+.cuerpo-carta {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.cartaMenu{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 300px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: solid #e3e6f0;
+    border-radius: 0.35rem;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+.seleccionable:hover{
+    cursor: pointer;
+}
+
+.cartaMenu:hover{
+    border: solid #b0beeb;
+}
+
+.cuerpo-cartaMenu {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.descripcion{
+    width: 200px;
+    height: 50px;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+.NotShow{
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+.CuadritoPop{
+    position:absolute;
+    top: 240px;
+    width: 310px;
+    height: 295px;
+    background-color: rgba(207, 207, 207, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.TextoCuadrito{
+    position:absolute;
+    left: 10px;
+    overflow: hidden;
+    word-wrap:break-word;
+    text-align: justify;
+}
+
+.InputCuadrito{
+    position:absolute;
+    right: 10px;
+}
+
+.ColumnaIzq{
+    position: absolute;
+    left: 25px;
+    top: 20px;
+}
+
+.ColumnaDer{
+    position: absolute;
+    left: 50%;
+    top: 20px;
+}
+
+.button.RoundWhiteButton{
+    border-radius: 20%;
+    background-color: white;
+    color: black;
+    border-color: black;
+    border-width: 1.5px;
+    border-style: solid;
+    width: 80px;
+    height: 30px;
+}
+
+.Cuadrito{
+    border-style: solid;
+    border-color: black;
+    border-width: 1.5px;
+    color: black;
+}
+
+.PlatilloSelec{
+    color: black;
+}
+
+.PlatilloSelec:hover{
+    cursor: pointer;
+}
+
+.LineasLogIn{
+    background-color: rgb(40,116,164);
+    width: 100%;
+    height: 7.5%;
+    position: absolute;
+}
+
+.LogInImage{
+    background: url("https://cdn1.intriper.com/wp-content/uploads/2015/09/13170439/jarritos-mexican-soda-bA3VwdUYduY-unsplash-1.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.RegisterImage{
+    background: url("https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/09/Chicken-and-Rice-8.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.SideBarColor {
+    background-color: #2472a3;
+    background-image: linear-gradient(180deg, #2472a3 10%, #224abe 100%);
+    background-size: cover;
+  }
+
+.RecoverImage{
+    background: url("https://i.ytimg.com/vi/dhD8SCJciaM/maxresdefault.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.Recover2Image{
+    background: url("https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2018/09/receta-super-facil-de-pan-frances-con-huevo-super-rico.jpg   ");
+    background-position: center;
+    background-size: cover;
+}
+
+.Meseros{
+    position:absolute;
+    bottom: 3%;
+    width: 70%;
+    overflow: scroll;
+    height: 170px;
+}
+
+.TarjetaMesero{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: #253340;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.fas.fa-trash.trash{
+   position: absolute;
+    top: 10px;
+    left: 50px;
+    z-index: 2;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.far.fa-user.mesero{
+    position: absolute;
+    top: 40px;
+    left: 55px;
+    font-size:45px;
+    z-index: 2;
+    color: #fff;
+}
+
+.fas.fa-user-plus.agregarMesero{
+    position: absolute;
+    top: 40px;
+    left: 55px;
+    font-size:45px;
+    z-index: 2;
+    color: #fff;
+    cursor: pointer;
+}
+
+.NombreMesero{
+    position: relative;
+    top: 60px;
+}
+
+.eliminar{
+    position: absolute;
+    top: 0%;
+    left: 46%;
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: #2472a3;
+    padding: 1px 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #253340;
+    display: inline-block;
+    font-size: 10px;
+    margin: 0px 0px;
+    transition-duration: 0.4s;
+    z-index: 1;
+}
+
+.cliente{
+    height: 50px;
+    width: 700px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #2472a3;
+    cursor: pointer;
+}
+
+.BotonesTB{
+    margin-top: 20px;
+    display: flex;
+    height: 100px;
+}
+
+.BotonesTB > * {
+    flex-basis: 100%;
+}
+
+.botonTB{
+    width: 70%;
+    height: 50px;
+    font-size: 20px;
+}
+
+.RayaCuadroCorte{
+    position: absolute;
+    left: 0%;
+    height: 100%;
+    width: 5px;
+    background-color: green;
+}
+
+.DineroCuadroCorte{
+    position: absolute;
+    top: 60px;
+    left: 10%;
+    color: black;
+    font-weight: bold;
+}
+
+.TextoCuadroCorte{
+    position: absolute;
+    top: 10px;
+    left: 10%;
+    color: rgb(27, 173, 173);
+    font-weight: bold;
+}
+
+.IconitoCuadroCorte{
+    position: absolute;
+    top: 25px;
+    left: 70%;
+}
+
+.CuadroCorte{
+    position: relative;
+    height: 100px;
+    width: 80%;
+    text-align: left;
+    background-color: rgb(207, 207, 207);
+}

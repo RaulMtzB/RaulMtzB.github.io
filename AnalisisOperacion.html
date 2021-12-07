@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>A la Orden - Análisis de operación</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <!-- Custom styles for this template-->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="Estilo.css">
+
+    </head>
+
+
+
+
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            
+
+             <!-- Sidebar -->
+             <ul class="navbar-nav SideBarColor sidebar sidebar-dark accordion" id="accordionSidebar">
+
+
+                <p></p>
+
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+
+                <p></p>
+
+
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: white; height: 100px;">
+                    <img src="Puerquito.png" alt="Logo" width="180" height="100">
+                </a>
+
+                <p><br></p>
+                
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="Cocina.html">
+                        <span class="badge badge-danger badge-counter"></span>
+                        <i class="material-icons" style="font-size: 25px;">kitchen</i>
+                        <span> Cocina</span></a>
+                </li>
+
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="platillos.html">
+                        <i class="material-icons" style="font-size: 25px;">fastfood</i>  
+                        <span> Platillos</span></a>
+                </li><hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="menus.html">
+                        <i class="material-icons" style="font-size: 25px;">restaurant_menu</i>  
+                        <span> Menús</span></a>
+                </li><hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="Mesas.html">
+                        <span class="badge badge-danger badge-counter" style="background-color: darkgoldenrod;"></span>
+                        <i class="material-icons" style="font-size: 25px;">table_bar</i>
+                        <span> Mesas</span></a>
+                </li><hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="Promociones.html">
+                        <i class="fas fa-percent" style="font-size: 25px;"></i>
+                        <span> Promociones</span></a>
+                </li><hr class="sidebar-divider my-0">
+
+
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="TablasSistema.html">
+                        <i class="fas fa-table" style="font-size: 25px;"></i>
+                        <span> Tablas del sistema</span></a>
+                </li>
+
+                <hr class="sidebar-divider my-0">
+
+                <li class="nav-item active">       
+                    <a class="nav-link" href="Cuenta.html">
+                        <i class="material-icons" style="font-size: 25px; color: white">account_circle</i>
+                        <span class="seleccionable" style="color: white; position: relative; bottom: 6px;"> Cuenta</span>
+                    </a>
+                </li>
+                
+                <hr class="sidebar-divider my-0">
+
+                <li class="nav-item active" id="CerrarSesion">       
+                    <a class="nav-link">
+                        <i class="fas fa-door-open seleccionable" style="font-size: 25px; color: white"></i>
+                        <span class="seleccionable" style="color: white;"> Cerrar sesión</span>
+                    </a>
+                </li>
+
+                
+
+            </ul>
+
+            
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <p></p>
+                <div style="width: 90%;height: 80%;">
+                    <h1 style="text-align: center; color: black; font-weight: bold; position: relative; bottom: -5%;">Análisis de operación</h1>
+                    <div class="table-responsive" style="overflow:scroll; width: 100%;height: 45%; text-align: center; position: relative; left:5%; top: 5%">
+                        <table class="table table-bordered" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: gray; color: white">id Movimiento</th>
+                                    <th style="background-color: gray; color: white">Fecha</th>
+                                    <th style="background-color: gray; color: white">Hora</th>
+                                    <th style="background-color: gray; color: white">Nombre Cliente</th>
+                                    <th style="background-color: gray; color: white">Número de mesa</th>
+                                    <th style="background-color: gray; color: white">Mesero asignado</th>
+                                    <th style="background-color: gray; color: white">Cuenta</th>
+                                    <th style="background-color: gray; color: white">Método de pago</th>
+                                </tr>
+                            </thead>
+                            <tbody id="TablaAnalisisOperacion">
+    
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p></p>
+
+                    <h1 style="text-align: center; color: black; font-weight: bold; position: relative; bottom: -5%;">Gastos</h1>
+                    <div class="table-responsive" style="overflow:scroll; width: 100%;height: 45%; text-align: center; position: relative; left:5%; top: 5%">
+                        <table class="table table-bordered" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: gray; color: white">id Movimiento</th>
+                                    <th style="background-color: gray; color: white">Fecha</th>
+                                    <th style="background-color: gray; color: white">Hora</th>
+                                    <th style="background-color: gray; color: white">Proveedor</th>
+                                    <th style="background-color: gray; color: white">Gasto</th>
+                                    <th style="background-color: gray; color: white">Comentarios</th>
+                                </tr>
+                            </thead>
+                            <tbody id="TablaGastosDiarios">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                
+                
+
+            </div>
+        </div>
+              
+    
+            
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
+
+
+    </body>
+
+    
+
+    <script src="AnalisisOperacion.js" type="module"></script>
+    <script src="Cocina.js" type="module"></script>
+</html>

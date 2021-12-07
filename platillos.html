@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>A la Orden - Platillos</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <!-- Custom styles for this template-->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="Estilo.css">
+
+    </head>
+
+    
+
+
+    <body id="page-top">
+        <div class="button addbutton" id="AgregarPlatillo">+
+        </div>
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            
+            <!-- Sidebar -->
+            <ul class="navbar-nav SideBarColor sidebar sidebar-dark accordion" id="accordionSidebar">
+                
+
+                <p></p>
+
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+
+                <p></p>
+
+
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: white; height: 100px;">
+                    <img src="Puerquito.png" alt="Logo" width="180" height="100">
+                </a>
+
+                <p><br></p>
+                
+                
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="Cocina.html">
+                        <span class="badge badge-danger badge-counter"></span>
+                        <i class="material-icons" style="font-size: 25px;">kitchen</i>
+                        <span> Cocina</span></a>
+                </li>
+
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="platillos.html">
+                        <i class="material-icons" style="font-size: 25px;">fastfood</i>  
+                        <span> Platillos</span></a>
+                </li><hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="menus.html">
+                        <i class="material-icons" style="font-size: 25px;">restaurant_menu</i>  
+                        <span> Menús</span></a>
+                </li><hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="Mesas.html">
+                        <span class="badge badge-danger badge-counter" style="background-color: darkgoldenrod;"></span>
+                        <i class="material-icons" style="font-size: 25px;">table_bar</i>
+                        <span> Mesas</span></a>
+                </li><hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="Promociones.html">
+                        <i class="fas fa-percent" style="font-size: 25px;"></i>
+                        <span> Promociones</span></a>
+                </li><hr class="sidebar-divider my-0">
+
+
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nuestros menús -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="TablasSistema.html">
+                        <i class="fas fa-table" style="font-size: 25px;"></i>
+                        <span> Tablas del sistema</span></a>
+                </li>
+
+                <hr class="sidebar-divider my-0">
+
+                <li class="nav-item active">       
+                    <a class="nav-link" href="Cuenta.html">
+                        <i class="material-icons" style="font-size: 25px; color: white">account_circle</i>
+                        <span class="seleccionable" style="color: white; position: relative; bottom: 6px;"> Cuenta</span>
+                    </a>
+                </li>
+                
+                <hr class="sidebar-divider my-0">
+
+                <li class="nav-item active" id="CerrarSesion">       
+                    <a class="nav-link">
+                        <i class="fas fa-door-open seleccionable" style="font-size: 25px; color: white"></i>
+                        <span class="seleccionable" style="color: white;"> Cerrar sesión</span>
+                    </a>
+                </li>
+
+                
+
+            </ul>
+
+            
+
+            <!-- Begin Page Content -->
+            
+            <div class="container-fluid">
+
+                <p></p>
+
+                <div class="row">
+                    <div class="col-auto">
+                        <input type="radio" id="Opcion3" name="Opciones" value="N" checked> 
+                        <label for="Opcion3">Mostrar todos</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="radio" id="Opcion1" name="Opciones" value="D" >
+                        <label for="Opcion1">D</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="radio" id="Opcion2" name="Opciones" value="F">
+                        <label for="Opcion2">F</label>
+                    </div>
+
+                    
+                    <div class="col-auto">
+                        <label for="filtraCategorias">Seleccione categoría: </label>
+                        <select id="filtraCategorias" style="border-radius: 20px; width: 150px;">
+                            <option value="ninguno" selected>Ninguna</option>
+                            <option value="Hamburguesas">Hamburguesas</option>
+                        </select>
+                    </div>
+
+                    <div class="col-auto">
+                        <button class="button" id="Categorias">Categorías</button>
+                    </div>
+                    
+                    <div class="col-auto">
+                        <button class="button" id="Ingredientes">Ingredientes</button>
+                    </div>
+
+                </div>
+                
+                <p></p>
+
+                <div class="row" id="TarjetasPlatillos">
+
+                    
+
+                </div>
+            
+        </div>
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
+    </body>
+
+    <!--Pop up Platillos-->
+    <div class="bg-modal1" id="PopPlatillos">
+        <div class="modal-content2">
+            <div class="card-body">
+                <input type="file" id="archivoimg">
+                <p></p>
+                <img src="#" id="platilloimg" alt="GetNombrePlatillo" width="243" height="130"> 
+                <p></p>  
+                <div class="CuadritoPop">
+                    <p></p>
+                    <p><div class="TextoCuadrito"></div>Nombre:<input class="InputCuadrito" type="text" id="NombrePlatillo"></p>
+                    <p><div class="TextoCuadrito"></div>Descripción: <textarea class="InputCuadrito" id="DescripcionPlatillo" style="height: 120px; width: 188px;"></textarea></p>
+                    <br><br><br>
+                    <p><div class="TextoCuadrito">Precio:</div><input class="InputCuadrito" type="number" id="PrecioPlatillo"></p>
+                    <select id="Disponibilidad" style="position:relative; left: 0px; top: 40px;">
+                        <option value="Disponible" selected>Disponible</option>
+                        <option value="No Disponible">No Disponible</option>
+                    </select>
+                    <select id="ElijeCategoria" style="position:relative; left: 10px; top: 40px;">
+                        <option value="SinCategoría" selected>--Sin_Categoria--</option>
+                    </select>
+                    <p class="NotShow" id="CadenaIngredientes"></p>
+                    <div class="row" style="position: relative; top: 30px">
+                        <div class="col-auto">
+                            <input type="radio" id="Opcion5" name="ElijeTipo" value="D">
+                            <label for="Opcion5">D</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="radio" id="Opcion6" name="ElijeTipo" value="F" checked>
+                            <label for="Opcion6">F</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="AcomodaBotones" style="position: absolute; top: 540px; left: 25%;">
+                    <button class="button" id="Eliminar" style="background-color: crimson;">Eliminar</button>
+                    <button class="button" id="ListaIngredientes" style="background-color: olive;">Ingredientes</button>
+                    <button class="button" id="Aceptar">Aceptar</button>
+                    <button class="button" id="Agregar">Agregar</button>
+                </div>
+                <div class="close" id="closePlatillos">+</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Pop up Categorías-->
+    <div class="bg-modal1" id="PopCategorias">
+        <div class="modal-content1" style="width: 520px;">
+            <div class="card-body">
+                <div class="table-responsive" style="height: 250px; width: 300px; text-align: center; position: absolute; left:20px; top: 20px; overflow:scroll;">
+                    <table class="table table-bordered"  cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="background-color: rgb(201, 199, 199); color: black;">Categoría</th>
+                                <th style="background-color: rgb(201, 199, 199); color: black; width: 75px;">Platillos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="TablaCategorias">
+                            <tr>
+                                <td class="seleccionable" name="selecCategoria" id="Cat1">Hamburguesas</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td class="seleccionable" name="selecCategoria" id="Cat2">Acompañamientos</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="position: absolute; top: 30px; left: 350px">
+                    <button class="button" id="AbreAgregarCategoria">Agregar categoría</button>
+                    <br><p></p>
+                    <button class="button" id="EliminarCategoria">Eliminar categoría</button>
+                </div>
+                
+                <div class="close" id="closeCategorias">+</div>
+            </div>
+        </div>
+    </div>
+
+    <!--Pop up AgregarCategoría-->
+    <div class="bg-modal1" id="PopAgregarCategoria">
+        <div class="modal-content1" style="width: 400px; height: 100px;">
+            <p style="position: absolute; top: 40px">Categoría: <input id="InputCategoria">  <button class="button" id="AgregarCategoria">Aceptar</button></p>
+            <div class="close" id="closeAgregarCategorias">+</div>
+        </div>
+    </div>
+
+
+
+    <!--Pop up Lista/Selecciona Ingredientes-->
+    <div class="bg-modal1" id="PopListaIngredientes">
+        <div class="modal-content1" style="height: 700px; width: 1000px;">
+            <div class="card-body">
+                <p>Si no encuentras un ingrediente en la lista, presiona el boton de "Agregar ingrediente".</p>
+                <p>Si la cantidad o uso de un ingrediente es despreciable o incalculable, recomendamos no incluirlo.</p>
+                <div class="table-responsive" style="height: 500px; width: 900px; text-align: center; position: relative; top: 10px; overflow:scroll;">
+                    <table class="table table-bordered" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="background-color: rgb(201, 199, 199); color: black;">Nombre</th>
+                                <th style="background-color: rgb(201, 199, 199); color: black; width: 200px;">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="TablaListaIngredientes">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div style="position: absolute; top: 650px;">
+                    <button class="button" id="AbreCrearIngrediente2">Agregar Ingrediente</button>
+                    <button class="button" id="AceptarCadenaIngredientes">Aceptar</button>
+                </div>
+                
+                
+                <div class="close" id="closeListaIngredientes">+</div>
+            </div>
+        </div>
+    </div>
+
+    <!--Pop up Ingredientes-->
+    <div class="bg-modal1" id="PopIngredientes">
+        <div class="modal-content1" style="height: 700px; width: 1000px;">
+            <div class="card-body">
+                <p>Al crear un ingrediente, Coloca en el nombre del ingrediente entre parentesis las unidades en las que es medido. Ej: Jitomate(kg)</p>
+                <div class="table-responsive" style="height: 500px; width: 900px; text-align: center; position: relative; top: 10px; overflow:scroll;">
+                    <table class="table table-bordered" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="background-color: rgb(201, 199, 199); color: black;">Nombre</th>
+                                <th style="background-color: rgb(201, 199, 199); color: black; width: 200px;">Consumido</th>
+                                <th style="background-color: rgb(201, 199, 199); color: black; width: 200px;">Restante</th>
+                            </tr>
+                        </thead>
+                        <tbody id="TablaIngredientes">
+                            <tr>
+                                <td td class="seleccionable" name="selecIngr" id="Ingr2">Sopas</td>
+                                <td name="Consumido">3</td>
+                                <td name="Restante">12</td>
+                            </tr>
+                            <tr>
+                                <td class="seleccionable" name="selecIngr" id="Ingr3">Cortes</td>
+                                <td name="Consumido">6</td>
+                                <td name="Restante">12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="position: absolute; top: 650px;">
+                    <button class="button" id="AbreCrearIngrediente">Agregar</button>
+                </div>
+                
+                
+                <div class="close" id="closeIngredientes">+</div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Pop up Crear/Editar Ingrediente-->
+    <div class="bg-modal1" id="PopCrearIngrediente">
+        <div class="modal-content2" style="height: 210px;">
+            <h3>Ingrediente:</h3>
+            <div class="card-body">
+                    <p>Nombre:<input class="InputCuadrito" type="text" id="NombreIngrediente" style="position: absolute; right: 30px; width: 240px;"></p>
+                    <p>Restante:<input class="InputCuadrito" type="number" id="RestanteIngrediente" style="position: absolute; right: 30px; width: 240px;"></p>
+                <div style="position: absolute; top: 170px; right: 20px;">
+                    <button class="button" id="EliminarIngrediente" style="background-color: crimson;">Eliminar</button>
+                    <button class="button" id="AceptarIngrediente">Aceptar</button>
+                    <button class="button" id="AgregarIngrediente">Agregar</button>
+                </div>
+                <div class="close" id="closeCrearIngrediente">+</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Platillos.js" type="module"></script>
+    <script src="Cocina.js" type="module"></script>
+
+</html>
