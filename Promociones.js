@@ -18,7 +18,7 @@ document.getElementById("CrearPromo").addEventListener('click', function(){
 })
 
 document.getElementById("EliminarPromo").addEventListener('click', function(){
-    const Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/promociones/" + SelecPromocion;
+    const Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/promociones/" + SelecPromocion;
     fetch(Direccion,{method:'DELETE'}).then(respuesta =>{
         ActualizaPromociones();
         document.getElementById("PopPromos").style.display = "none";
@@ -49,7 +49,7 @@ function ActualizaSeleccionPromociones(){
                 document.getElementById("AceptarP").style.display = 'inline';
                 CadenaPlatillos = document.getElementsByName('ListaPlatillosPromocion')[index].textContent;
                 var aux;
-                let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/platillos";  
+                let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/platillos";  
                 
                 fetch(Direccion,{method:'GET'}).then(respuesta =>{
                     return respuesta.json()
@@ -80,7 +80,7 @@ function ActualizaSeleccionPromociones(){
 
 //Pedir platillos
 function ActualizaListaPlatillos(){
-    let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/platillos";
+    let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/platillos";
     document.getElementById('SelecPlatillo').innerHTML = '<option value="Ninguno" selected>-Seleccione platillo-</option>'
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
         return respuesta.json()
@@ -95,7 +95,7 @@ function ActualizaListaPlatillos(){
 }
 
 function ActualizaPromociones(){
-    let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/promociones"; //pendiente dirección y json
+    let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/promociones"; //pendiente dirección y json
     document.getElementById('TablaPromociones').innerHTML = '';
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
         return respuesta.json()
@@ -131,7 +131,7 @@ document.getElementById('AgregarP').addEventListener('click', function(){
 
 document.getElementById('AceptarP').addEventListener('click', function(){
     if (document.getElementById("PorcentajePromo").value != "" && document.getElementById("NombrePromo").value != "" && CadenaPlatillos != ""){
-        const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/" + SelecPromocion; //Esta dirección es solo de prueba
+        const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/" + SelecPromocion; //Esta dirección es solo de prueba
         let Categoria = 
             {
                 "nombre" : document.getElementById("NombrePromo").value,
@@ -153,7 +153,7 @@ document.getElementById('AceptarP').addEventListener('click', function(){
 
 document.getElementById('AgregarPromo').addEventListener('click', function(){
     if (document.getElementById("PorcentajePromo").value != "" && document.getElementById("NombrePromo").value != "" && CadenaPlatillos != ""){
-        const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/promociones"; //Esta dirección es solo de prueba
+        const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/promociones"; //Esta dirección es solo de prueba
         CadenaPlatillos = CadenaPlatillos.replace('~',"");
         console.log(CadenaPlatillos);
         let Categoria = 
