@@ -20,7 +20,7 @@ document.getElementById("CerrarSesion").addEventListener('click', function(){
 });
 
 
-let eventSource = new EventSource('http://localhost:8080/v1/restaurants/'+ Restaurante.getRestauranteid() +'/subscribe-notification', { method: 'GET', mode: 'cors'})
+let eventSource = new EventSource(Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() +'/subscribe-notification', { method: 'GET', mode: 'cors'})
       let emitterId;
 
       eventSource.onerror = (error) => {
@@ -54,7 +54,7 @@ let eventSource = new EventSource('http://localhost:8080/v1/restaurants/'+ Resta
 
 
 function ActualizaPedidos(){
-    let Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/kitchen";
+    let Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/kitchen";
 
     console.log("Entra a actualiza")
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
