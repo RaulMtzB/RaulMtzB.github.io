@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
 }); 
 
 function Actualiza(){
-    fetch(Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/info",{method:'GET'}).then(respuesta =>{  
+    fetch(Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/info",{method:'GET'}).then(respuesta =>{  
         return respuesta.json();
     }).then(data => { 
         document.getElementById('Imagen_Restaurante').src = data.imagen;
@@ -41,7 +41,7 @@ document.getElementById('Guardar_datos').addEventListener('click', function(){
                 //"imagen" : "" //Vamos a ver si jala sin esto
             }
 
-            fetch(Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/info",{method:'PATCH',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) }).then(respuesta =>{
+            fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/info",{method:'PATCH',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) }).then(respuesta =>{
                 return respuesta.json();
             }).then(data => {
                 if (Editado){
