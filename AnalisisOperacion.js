@@ -3,7 +3,7 @@ import * as Restaurante from './Configuracion.js';
 ActualizaTablaAnalisisOperacion();
 
 function ActualizaTablaAnalisisOperacion(){
-    let Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/operaciones"; //Completar con Cristo
+    let Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/operaciones"; //Completar con Cristo
 
     document.getElementById('TablaAnalisisOperacion').innerHTML = ""
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
@@ -27,7 +27,7 @@ function ActualizaTablaAnalisisOperacion(){
 
     //Gastos diarios
 
-    Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/gastos"; 
+    Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/gastos"; 
 
     document.getElementById('TablaGastosDiarios').innerHTML = ""
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
