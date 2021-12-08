@@ -20,7 +20,7 @@ document.getElementById('AgregarGastoDiario').addEventListener('click', function
             var time = hour + ":" + minutes;
             console.log(document.getElementById('Comentarios').value)
 
-        const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/gastos";
+        const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/gastos";
             let Categoria =  
                 {
                     //"idMovimiento": "Holi",
