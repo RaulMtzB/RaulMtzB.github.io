@@ -3,7 +3,7 @@ import * as Restaurante from './Configuracion.js';
 CorteDeCaja();
 
 function CorteDeCaja(){
-    let Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/CorteCaja"; //Completar con Cristo
+    let Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/CorteCaja"; //Completar con Cristo
 
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
         return respuesta.json()
@@ -42,7 +42,7 @@ document.getElementById("closePopVentasPagos").addEventListener('click', functio
 })
 
 document.getElementById("BotonCorteCaja").addEventListener('click', function(){
-    let Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/cortecaja";
+    let Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/cortecaja";
 
     fetch(Direccion,{method:'POST',headers: { 'Content-Type': 'application/json'}}).then(respuesta =>{
         return respuesta.json();
@@ -77,7 +77,7 @@ document.getElementById('Ganancias').addEventListener('click', function(){
     document.getElementById('PopVentasPagos').style.display = 'flex';
     document.getElementById('TituloVentasPagos').textContent = "Ganancias del día";
 
-    let Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/operaciones"; //Completar con Cristo
+    let Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/operaciones"; //Completar con Cristo
     document.getElementById('TablaAnalisisOperacion').innerHTML = ""
 
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
