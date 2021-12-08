@@ -106,7 +106,7 @@ function ActualizaSeleccionPedidos(){
 }
 
 function ActualizaCocinaMesas(){
-    let Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/tables";
+    let Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables";
     var num = 0;
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
         return respuesta.json()
