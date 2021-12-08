@@ -63,7 +63,7 @@ document.getElementById('Editar').addEventListener('click',function(){
 document.getElementById('Borrar').addEventListener('click',function(){
     var value = select.options[select.selectedIndex].id;
     selecMenu = value;
-    const Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() +"/menu/" + selecMenu;
+    const Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() +"/menu/" + selecMenu;
     fetch(Direccion,{method:'DELETE'}).then(respuesta =>{
         ActualizaMenus();
     }).catch(console.error);
@@ -79,7 +79,7 @@ document.getElementById('AgregarMenu').addEventListener('click',function(){
                 CadenaPlatillosMenu += infoPlatillo[i].id + "~";
             }
         }
-        const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/menu";
+        const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/menu";
         let Categoria = 
             {
                 "nombre" : document.getElementById('NombreMenu').value,
@@ -110,7 +110,7 @@ document.getElementById('AceptarMenu').addEventListener('click',function(){
                 CadenaPlatillosMenu += infoPlatillo[i].id + "~";
             }
         }
-        const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/menu/" + selecMenu; //Esta dirección es solo de prueba
+        const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/menu/" + selecMenu; //Esta dirección es solo de prueba
         let Categoria = 
             {
                 "nombre" : document.getElementById('NombreMenu').value,
@@ -131,7 +131,7 @@ document.getElementById('AceptarMenu').addEventListener('click',function(){
 //funciones
 
 function ActualizaPlatillosMenus(){
-    let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/platillos";
+    let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/platillos";
 
 
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
@@ -192,7 +192,7 @@ function ActualizaPlatillosMenus(){
 }
 
 function ActualizaMenus(){
-    let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/menu";
+    let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/menu";
     var activo = "";
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
         return respuesta.json()
@@ -245,7 +245,7 @@ function FiltraMenus(){
 document.getElementById('Pausar').addEventListener('click', function(){
     var value = select.options[select.selectedIndex].id;
     selecMenu = value;
-    const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/menu/" + selecMenu + "/"+false; //Esta dirección es solo de prueba
+    const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/menu/" + selecMenu + "/"+false; //Esta dirección es solo de prueba
             fetch(Direccion,{method:'PATCH',headers: { 'Content-Type': 'application/json' }}).then(respuesta =>{
                 ActualizaMenus();
                 return respuesta.json()
@@ -257,7 +257,7 @@ document.getElementById('Pausar').addEventListener('click', function(){
 document.getElementById('Reanudar').addEventListener('click', function(){
     var value = select.options[select.selectedIndex].id;
     selecMenu = value;
-    const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/menu/" + selecMenu + "/" + true; //Esta dirección es solo de prueba
+    const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/menu/" + selecMenu + "/" + true; //Esta dirección es solo de prueba
             fetch(Direccion,{method:'PATCH',headers: { 'Content-Type': 'application/json' }}).then(respuesta =>{
                 ActualizaMenus();
                 return respuesta.json()
