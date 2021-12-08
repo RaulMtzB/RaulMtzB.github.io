@@ -29,7 +29,7 @@ function ActualizaSeleccionCuentas (){
 }
 
 function ActualizaMovimientos(){
-    let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/clientesPremium/cuentas/" + SelectedClient;
+    let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/clientesPremium/cuentas/" + SelectedClient;
     document.getElementById('ContenidoTablaCuentas').innerHTML = '';
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
         return respuesta.json()
@@ -107,7 +107,7 @@ document.getElementById('AbrePopCrearClienteVIP').addEventListener('click',funct
 
 
 /*document.getElementById('CuentaPagar').addEventListener('click',function(){
-    const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/";
+    const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/";
     let Categoria = 
         {
             "id" : SelectedClient
@@ -122,7 +122,7 @@ document.getElementById('AbrePopCrearClienteVIP').addEventListener('click',funct
 })*/
 
 document.getElementById('AgregarClienteVIP').addEventListener('click',function(){
-    const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/clientesPremium";
+    const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/clientesPremium";
     let Categoria = 
         {
             "id" : document.getElementById('InputIDCliente').value
@@ -139,14 +139,14 @@ document.getElementById('AgregarClienteVIP').addEventListener('click',function()
 
 
 document.getElementById('EliminarClienteVIP').addEventListener('click', function(){
-    const Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/clientesPremium/" + document.getElementById('InputIDCliente').value; 
+    const Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/clientesPremium/" + document.getElementById('InputIDCliente').value; 
     fetch(Direccion,{method:'DELETE'}).then(respuesta =>{
         document.getElementById('PopCrearClienteVIP').style.display = 'none';
     }).catch(console.error);
 })
 
 function ActualizaCuentas(){
-    let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/clientesPremium/adeudos";
+    let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/clientesPremium/adeudos";
     document.getElementById('ContenidoTablaCuentas').innerHTML = '';
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
         return respuesta.json()
