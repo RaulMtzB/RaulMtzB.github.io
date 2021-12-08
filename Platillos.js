@@ -211,7 +211,7 @@ function Actualiza(){
 //Actualiza Ingredientes tanto de el popup ingredientes como del popup listaingrendientes
 
 function ActualizaIngredientes(){
-    let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/ingredientes";
+    let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/ingredientes";
 
     document.getElementById('TablaIngredientes').innerHTML = ""
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
@@ -232,7 +232,7 @@ function ActualizaIngredientes(){
 }
 
 function ActualizaPlatillos(){
-    let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/platillos";
+    let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/platillos";
     let identifier;
     let Tumbnail = "";
 
@@ -281,7 +281,7 @@ function ActualizaPlatillos(){
 
 function ActualizaCategorías(){
 
-    let Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/categorias"; //Esta dirección es solo de prueba | Restaurante.getRestauranteURL()  + Restaurante.getRestaurante + "/platillos";
+    let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/categorias"; //Esta dirección es solo de prueba | Restaurante.getRestauranteURL()  + Restaurante.getRestaurante + "/platillos";
 
     //Revisa Cantidad
     document.getElementById('TablaCategorias').innerHTML = ""
@@ -417,13 +417,13 @@ document.getElementById('Aceptar').addEventListener('click',function(){
         console.log("Llega")
         
 
-            fetch(Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() +"/platillos/" + seleccionado,{method:'PATCH',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(platillo) }).then(respuesta =>{
+            fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() +"/platillos/" + seleccionado,{method:'PATCH',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(platillo) }).then(respuesta =>{
                 ActualizaPlatillos();
                 return respuesta.json();
             }).then(data => {
                 if (Editado){
-                    //fetch(Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/platillo/" + data.id + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
-                    fetch(Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/platillo/" + seleccionado + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
+                    //fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + data.id + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
+                    fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + seleccionado + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
                     Editado = false;
                 }
             }).catch(console.error);
@@ -455,7 +455,7 @@ document.getElementById('AbreAgregarCategoria').addEventListener('click', functi
 
 document.getElementById('AgregarCategoria').addEventListener('click',function(){
     if(document.getElementById('InputCategoria').value != ""){
-        const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/categorias"; //Esta dirección es solo de prueba
+        const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/categorias"; //Esta dirección es solo de prueba
         let Categoria = 
             {
                 "nombre" : document.getElementById('InputCategoria').value,
@@ -524,7 +524,7 @@ document.getElementById("AbreCrearIngrediente2").addEventListener('click', funct
 });
 
 document.getElementById('EliminarCategoria').addEventListener('click', function(){
-    const Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() +"/categorias/" + Catselection;
+    const Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() +"/categorias/" + Catselection;
     fetch(Direccion,{method:'DELETE'}).then(respuesta =>{
         ActualizaCategorías();
     }).catch(console.error);
@@ -532,7 +532,7 @@ document.getElementById('EliminarCategoria').addEventListener('click', function(
 
 document.getElementById("AgregarIngrediente").addEventListener('click', function(){
     if(document.getElementById('NombreIngrediente').value != "" && document.getElementById('RestanteIngrediente').value != ""){
-        const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/ingredientes"; //Esta dirección es solo de prueba
+        const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/ingredientes"; //Esta dirección es solo de prueba
         let Categoria = 
             {
                 "nombre" : document.getElementById('NombreIngrediente').value,
@@ -555,7 +555,7 @@ document.getElementById("AgregarIngrediente").addEventListener('click', function
 
 document.getElementById("AceptarIngrediente").addEventListener('click', function(){
     if(document.getElementById('NombreIngrediente').value != "" && document.getElementById('RestanteIngrediente').value != ""){
-        const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/ingredientes/" + IngrSelection; //Esta dirección es solo de prueba
+        const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/ingredientes/" + IngrSelection; //Esta dirección es solo de prueba
         let Categoria = 
             {
                 "nombre" : document.getElementById('NombreIngrediente').value,
@@ -579,14 +579,14 @@ document.getElementById("AceptarIngrediente").addEventListener('click', function
 });
 
 document.getElementById("EliminarIngrediente").addEventListener('click', function(){
-    const Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() +"/ingredientes/" + IngrSelection;
+    const Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() +"/ingredientes/" + IngrSelection;
     fetch(Direccion,{method:'DELETE'}).then(respuesta =>{
         ActualizaIngredientes();
     }).catch(console.error);
 });
 
 document.getElementById("Eliminar").addEventListener('click', function(){
-    const Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() +"/platillos/" + seleccionado;
+    const Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() +"/platillos/" + seleccionado;
     fetch(Direccion,{method:'DELETE'}).then(respuesta =>{
         ActualizaPlatillos();
     }).catch(console.error);
@@ -646,7 +646,7 @@ document.getElementById("Agregar").addEventListener('click', function(){
     }
     else{
 
-        const Direccion = Restaurante.getRestauranteURL()  + Restaurante.getRestauranteid() + "/platillos"; 
+        const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/platillos"; 
 
         const imagen = document.getElementById("archivoimg");
         const formData = new FormData();
@@ -710,7 +710,7 @@ document.getElementById("Agregar").addEventListener('click', function(){
                 return respuesta.json();
             }).then(data => {
                 console.log(data.id);
-                fetch(Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/platillo/" + data.id + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
+                fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + data.id + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
             }).catch(console.error);
 
             document.getElementById('PopPlatillos').style.display = 'none';
