@@ -28,7 +28,7 @@ function Actualiza (){
 
 function ActualizaMesas(){
     const Tarjetas = document.getElementById("TarjetasMesas");
-    let Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables"; //Esta dirección es solo de prueba | Restaurante.getRestauranteURL()  + Restaurante.getRestaurante + "/platillos";
+    let Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables"; //Esta dirección es solo de prueba | Restaurante.getRestauranteURL()  + Restaurante.getRestaurante + "/platillos";
     var colorM;
     var Pedido;
     var mesero = "Sin asignar";
@@ -96,7 +96,7 @@ function ActualizaSelecciónMesa(){
 }
 
 function ActualizaContenidoMesa(){
-    let Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection;
+    let Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection;
     console.log("ID: " + Tableselection);
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
         return respuesta.json()
@@ -243,7 +243,7 @@ function ActualizaSeleccionAsientos(){
 
                 console.log(index);
                 console.log("Clicked index: " + SelecAsiento[index].id);
-                const Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/"+ Tableselection +"/seats/" + document.getElementsByName("AsientoQR")[index].id; //pendiente la dirección.
+                const Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/"+ Tableselection +"/seats/" + document.getElementsByName("AsientoQR")[index].id; //pendiente la dirección.
                 fetch(Direccion,{method:'DELETE'}).then(respuesta =>{
                     ActualizaSeleccionAsientos();
                 }).catch(console.error);
@@ -335,7 +335,7 @@ function ActualizaSeleccionAsientos(){
     })
 
     function ActualizaVerAsientos(){
-        let Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/seats";
+        let Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/seats";
         document.getElementById('ContenedorQRS').innerHTML = ""
         fetch(Direccion,{method:'GET'}).then(respuesta =>{
             return respuesta.json()
@@ -370,7 +370,7 @@ function ActualizaSeleccionAsientos(){
                     ClienteSeleccionado = SelecCliente[index].id;
                     billSelection = document.getElementsByName('IDBill')[index].id;
                     console.log(billSelection)
-                    const Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() +"/tables/" + Tableselection + "/bills/" + SelecCliente[index].id; //pendiente la dirección.
+                    const Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() +"/tables/" + Tableselection + "/bills/" + SelecCliente[index].id; //pendiente la dirección.
                     fetch(Direccion,{method:'GET'}).then(respuesta =>{
                         return respuesta.json()
                     }).then(data => {
@@ -441,7 +441,7 @@ function ActualizaSeleccionAsientos(){
 
     document.getElementById('AsignarMesero').addEventListener('click', function(){
         if (document.getElementById('ElijeMesero').options[document.getElementById('ElijeMesero').selectedIndex].value != "SinMesero"){
-            const Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection; //Esta dirección es solo de prueba
+            const Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection; //Esta dirección es solo de prueba
             let Categoria =  
                 {
                     "waiterName": document.getElementById('ElijeMesero').options[document.getElementById('ElijeMesero').selectedIndex].value
@@ -457,7 +457,7 @@ function ActualizaSeleccionAsientos(){
     })
 
     document.getElementById("AgregarAsiento").addEventListener('click', function(){
-        const Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/seats"; //Esta dirección es solo de prueba
+        const Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/seats"; //Esta dirección es solo de prueba
 
         fetch(Direccion,{method:'POST',headers: { 'Content-Type': 'application/json' }}).then(respuesta =>{
             ActualizaVerAsientos();
@@ -470,7 +470,7 @@ function ActualizaSeleccionAsientos(){
 
         var check = document.getElementsByName('ProductorSeleccionado');
         var j=0;
-        const Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/bills/" + billSelection;
+        const Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/bills/" + billSelection;
         if(check.length > 0){
             let Products = []
             for (var i=0; i<check.length; i++){
@@ -500,7 +500,7 @@ function ActualizaSeleccionAsientos(){
     document.getElementById('Crear').addEventListener('click', function(){
         const NombreMesa = document.getElementById("NombreMesa").value; 
     
-        const Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables"; //Esta dirección es solo de prueba
+        const Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables"; //Esta dirección es solo de prueba
         let Categoria = 
             {
                 "name" : NombreMesa
@@ -613,7 +613,7 @@ document.getElementById("ImprimirQR").addEventListener('click', function()
     })
 
     document.getElementById('AceptarContraseña').addEventListener('click', function(){
-        const Direccion = Restaurants.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/bills/" + billSelection;
+        const Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/bills/" + billSelection;
         console.log("ProductID:" + SelecProdCliente)
         console.log(Direccion)
         let Categoria = 
