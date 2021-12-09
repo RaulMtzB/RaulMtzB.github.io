@@ -16,7 +16,7 @@ if (Restaurante.getRestauranteid() == ""){
 document.getElementById("CerrarSesion").addEventListener('click', function(){
     console.log(Restaurante.getRestauranteid());
     Restaurante.setRestauranteid("");
-    window.location = "login.html";
+    window.location = "index.html";
 });
 
 
