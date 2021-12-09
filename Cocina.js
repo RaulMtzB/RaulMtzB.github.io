@@ -10,7 +10,7 @@ ActualizaPedidos();
 
 
 if (Restaurante.getRestauranteid() == ""){
-    window.location = "login.html";
+    window.location = "index.html";
 }
 
 document.getElementById("CerrarSesion").addEventListener('click', function(){
