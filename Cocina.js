@@ -116,7 +116,7 @@ function ActualizaCocinaMesas(){
                 num += 1;
             }
         }
-        if (window.location.pathname == "/startbootstrap-sb-admin-2-gh-pages/Mesas.html"){
+        if (window.location.pathname == "/Mesas.html"){
             document.getElementsByClassName('badge')[1].style.display = 'none'
             //Mesas.ActualizaParaCocina();
         }else if (num == 0) {
