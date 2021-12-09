@@ -60,7 +60,7 @@ function ActualizaPedidos(){
     fetch(Direccion,{method:'GET'}).then(respuesta =>{
         return respuesta.json()
     }).then(data => {      
-        if (window.location.pathname == "/startbootstrap-sb-admin-2-gh-pages/Cocina.html"){
+        if (window.location.pathname == "/Cocina.html"){
             document.getElementsByClassName('badge')[0].style.display = 'none'
             document.getElementById('TarjetasCocina').innerHTML = ""
             console.log(data.products.length)
