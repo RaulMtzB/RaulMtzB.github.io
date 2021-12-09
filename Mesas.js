@@ -632,4 +632,4 @@ document.getElementById("ImprimirQR").addEventListener('click', function()
     })
 
 
-}
+//}
