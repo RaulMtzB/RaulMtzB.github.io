@@ -49,7 +49,7 @@ let eventSource = new EventSource(Restaurante.getRestauranteURLR() + Restaurante
       window.onbeforeunload = () => {
          eventSource.close();
 
-         fetch(Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/delete-notification?emitterId=" + emitterId)
+         fetch(Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/delete-notification?emitterId=" + emitterId)
       }
 
 
@@ -96,7 +96,7 @@ function ActualizaSeleccionPedidos(){
         (function(index) {            
             document.getElementsByName('CerarPedido')[index].addEventListener("click", function() {
                 SelectedProduct = document.getElementsByName('CartaPedido')[index].id;
-                let Direccion = Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/kitchen/?productId=" + SelectedProduct;
+                let Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/kitchen/?productId=" + SelectedProduct;
                 fetch(Direccion,{method:'PATCH'}).then(respuesta =>{
                     ActualizaPedidos();
                 }).catch(console.error);
