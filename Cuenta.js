@@ -45,7 +45,7 @@ document.getElementById('Guardar_datos').addEventListener('click', function(){
                 return respuesta.json();
             }).then(data => {
                 if (Editado){
-                    fetch(Restaurante.getRestauranteURL() + Restaurante.getRestauranteid() + "/imagen",{method:'POST', body: formData }).catch(console.error);
+                    fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/imagen",{method:'POST', body: formData }).catch(console.error);
                     Editado = false;
                 }
                 Actualiza();
