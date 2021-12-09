@@ -23,6 +23,7 @@ export function ActualizaParaCocina(){
 
 function Actualiza (){
     ActualizaMeseros();
+    console.log("Hola")
     ActualizaMesas();
 }
 
@@ -198,11 +199,14 @@ function ActualizaMeseros(){
                 <div name="EliminarMesero" class="eliminar"><i class="fas fa-trash trash"></i></div>   
             </div>`
         }
+        
+        
         ActualizaSeleccionMeseros();
     }).catch(console.error)
-}
+    
 
 function ActualizaSeleccionMeseros(){
+    console.log("El Fer")
     console.log("Meseros:" + SelecMesero.length);
     document.getElementById('AgregarMesero').addEventListener('click',function(){
         document.getElementById('PopCrearMesero').style.display = 'flex';
@@ -632,4 +636,4 @@ document.getElementById("ImprimirQR").addEventListener('click', function()
     })
 
 
-//}
+}
