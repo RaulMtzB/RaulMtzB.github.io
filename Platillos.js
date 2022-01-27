@@ -377,9 +377,8 @@ document.getElementById('Aceptar').addEventListener('click',function(){
 
         for(var i = 0; i<StringASeparar.length; i++){
             var cadenita = "";
-            while (StringASeparar[i] != "~" && i<StringASeparar.length-1){
+            while (StringASeparar[i] != "~" && i<=StringASeparar.length-1){
                 cadenita += StringASeparar[i];
-                if (i<StringASeparar.length-1)
                     i++; 
             }
             i++;
@@ -673,9 +672,8 @@ document.getElementById("Agregar").addEventListener('click', function(){
 
         for(var i = 0; i<StringASeparar.length; i++){
             var cadenita = "";
-            while (StringASeparar[i] != "~" && i<StringASeparar.length-1){
+            while (StringASeparar[i] != "~" && i<=StringASeparar.length-1){
                 cadenita += StringASeparar[i];
-                if (i<StringASeparar.length-1)
                     i++; 
             }
             i++;
