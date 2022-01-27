@@ -666,7 +666,7 @@ document.getElementById("Agregar").addEventListener('click', function(){
         
         
         var StringASeparar = document.getElementById("CadenaIngredientes").textContent;
-        var IngOCant = True;
+        var IngOCant = true;
 
         for(var i = 0; i<StringASeparar.length; i++){
             var cadenita = "";
