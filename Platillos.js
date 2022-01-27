@@ -156,6 +156,7 @@ function ActualizaAgregar(){
         document.getElementById("Agregar").style.display = 'inline';
         document.getElementById("Aceptar").style.display = 'none';
         document.getElementsByName("ElijeTipo")[0].checked = true;
+        document.getElementById("CadenaIngredientes").textContent = "";
         StrIngredientes = "";
     });    
 }
@@ -663,7 +664,9 @@ document.getElementById("Agregar").addEventListener('click', function(){
             }
         }
         
+        
         var StringASeparar = document.getElementById("CadenaIngredientes").textContent;
+        var IngOCant = True;
 
         for(var i = 0; i<StringASeparar.length; i++){
             var cadenita = "";
