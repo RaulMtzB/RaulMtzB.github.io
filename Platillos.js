@@ -487,7 +487,7 @@ document.getElementById('ListaIngredientes').addEventListener('click', function(
     for(var i = 0; i<StrIngredientes.length; i++){
         var cadenita = "";
         var valor = "";
-        while (StrIngredientes[i] != "~"){
+        while (StrIngredientes[i] != "~" && i<=StrIngredientes.length-1){
             cadenita += StrIngredientes[i];
             i++; 
         }
@@ -717,7 +717,10 @@ document.getElementById("Agregar").addEventListener('click', function(){
                 return respuesta.json();
             }).then(data => {
                 console.log(data.id);
-                fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + data.id + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
+                if (Editado){
+                    fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + data.id + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
+                    Editado = false;
+                }
             }).catch(console.error);
 
             document.getElementById('PopPlatillos').style.display = 'none';
