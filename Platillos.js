@@ -373,7 +373,7 @@ document.getElementById('Aceptar').addEventListener('click',function(){
         var StringASeparar = document.getElementById("CadenaIngredientes").textContent;
         var Ingredientes = "";
         var CantidadIngredientes = "";
-        var IngOCant = True;
+        var IngOCant = true;
 
         for(var i = 0; i<StringASeparar.length; i++){
             var cadenita = "";
