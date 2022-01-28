@@ -262,7 +262,6 @@ function ActualizaPlatillos(){
                     tipo = "F";
                 }
                 var cadenita;
-                var cadenita2;
                 var j=0;
                 
                 console.log("ingredentes:" + data[i].ingredientes)
@@ -289,6 +288,7 @@ function ActualizaPlatillos(){
                     cadenita += "~";
                 }
                 var k;
+                var cadenita2;
                 for (k=0; k<cadenita.lenght-1; k++){
                     cadenita2 = cadenita[k];
                 }
