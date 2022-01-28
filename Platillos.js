@@ -419,7 +419,6 @@ document.getElementById('Aceptar').addEventListener('click',function(){
         
 
             fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() +"/platillos/" + seleccionado,{method:'PATCH',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(platillo) }).then(respuesta =>{
-                ActualizaPlatillos();
                 return respuesta.json();
             }).then(data => {
                 if (Editado){
@@ -427,6 +426,7 @@ document.getElementById('Aceptar').addEventListener('click',function(){
                     fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + seleccionado + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
                     Editado = false;
                 }
+                ActualizaPlatillos();
             }).catch(console.error);
 
             document.getElementById('PopPlatillos').style.display = 'none';
@@ -712,8 +712,6 @@ document.getElementById("Agregar").addEventListener('click', function(){
         let Tumbnail = "";
 
             fetch(Direccion,{method:'POST',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(platillo) }).then(respuesta =>{
-                
-                ActualizaPlatillos();
                 return respuesta.json();
             }).then(data => {
                 console.log(data.id);
@@ -721,6 +719,7 @@ document.getElementById("Agregar").addEventListener('click', function(){
                     fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + data.id + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
                     Editado = false;
                 }
+                ActualizaPlatillos();
             }).catch(console.error);
 
             document.getElementById('PopPlatillos').style.display = 'none';
