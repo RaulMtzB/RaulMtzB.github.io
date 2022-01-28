@@ -446,6 +446,10 @@ document.getElementById('Aceptar').addEventListener('click',function(){
                 "alimento": tipo
             }
 
+        
+        console.log("Ingredientes: " + Ingredientes)
+        console.log("Cantidad Ingredientes: " + CantidadIngredientes)
+        
         let identifier;
         let Tumbnail = "";
         console.log("Llega")
@@ -728,8 +732,6 @@ document.getElementById("Agregar").addEventListener('click', function(){
             }
         }
 
-        console.log("Ingredientes: " + Ingredientes)
-        console.log("Cantidad Ingredientes: " + CantidadIngredientes)
         
         let platillo = 
             {
