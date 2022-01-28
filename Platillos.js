@@ -264,6 +264,8 @@ function ActualizaPlatillos(){
                 var cadenita;
                 var cadenita2;
                 var j=0;
+                
+                /*
                 for (var ii=0; data[i].ingredientes.length; ii++){
                     
                     while (data[i].ingredientes[ii] != "~" && ii<=data[i].ingredientes.length-1){
@@ -284,6 +286,7 @@ function ActualizaPlatillos(){
                 var k;
                 for (k=0; k<cadenita.lenght-1; k++)
                     cadenita2 = cadenita[k];
+                */
                 
                 console.log(cadenita2);
                 
