@@ -421,6 +421,7 @@ document.getElementById('Aceptar').addEventListener('click',function(){
             fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() +"/platillos/" + seleccionado,{method:'PATCH',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(platillo) }).then(respuesta =>{
                 return respuesta.json();
             }).then(data => {
+                console.log("Editado = " + Editado)
                 if (Editado){
                     //fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + data.id + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
                     fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + seleccionado + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
