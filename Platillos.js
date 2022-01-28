@@ -263,20 +263,18 @@ function ActualizaPlatillos(){
                 }
                 var cadenita;
                 var cadenita2;
-                
-                data[i].cantidadIngrediente
                 var j=0;
-                for (var ii=0; data[ii].ingredientes.length; ii++){
+                for (var ii=0; data[i].ingredientes.length; ii++){
                     
-                    while (data[ii].ingredientes[ii] != "~" && ii<=data[ii].ingredientes.length-1){
-                    cadenita += data[ii].ingredientes[ii];
+                    while (data[i].ingredientes[ii] != "~" && ii<=data[i].ingredientes.length-1){
+                    cadenita += data[i].ingredientes[ii];
                         ii++; 
                     } 
                     
                     cadenita += "~";
                     
-                    while (data[ii].cantidadIngrediente[j] != "~" && ii<=data[ii].cantidadIngrediente.length-1){
-                    cadenita += data[ii].cantidadIngrediente[j];
+                    while (data[i].cantidadIngrediente[j] != "~" && ii<=data[i].cantidadIngrediente.length-1){
+                    cadenita += data[i].cantidadIngrediente[j];
                         j++; 
                     }
                     
