@@ -268,14 +268,14 @@ function ActualizaPlatillos(){
                 var j=0;
                 for (var ii=0; data[ii].ingredientes.length; ii++){
                     
-                    while (data[ii].ingredientes[ii] != "~" && i<=data[ii].ingredientes.length-1){
+                    while (data[ii].ingredientes[ii] != "~" && ii<=data[ii].ingredientes.length-1){
                     cadenita += data[ii].ingredientes[ii];
-                        i++; 
+                        ii++; 
                     } 
                     
                     cadenita += "~";
                     
-                    while (data[ii].cantidadIngrediente[j] != "~" && i<=data[ii].cantidadIngrediente.length-1){
+                    while (data[ii].cantidadIngrediente[j] != "~" && ii<=data[ii].cantidadIngrediente.length-1){
                     cadenita += data[ii].cantidadIngrediente[j];
                         j++; 
                     }
