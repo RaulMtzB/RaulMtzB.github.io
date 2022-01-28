@@ -261,36 +261,36 @@ function ActualizaPlatillos(){
                 }else{
                     tipo = "F";
                 }
+                
                 var cadenita = "";
                 var j=0;
                 
-                console.log("ingredentes:" + data[i].ingredientes)
-                console.log("cantidad: " + data[i].cantidadIngrediente)
+                console.log("data :" + data)
                 
-                
-                //Hola
                 
                 for (var ii=0; ii<data[i].ingredientes.length; ii++){
                     
                     while (data[i].ingredientes[ii] != "~" && ii<=data[i].ingredientes.length-1){
-                    cadenita += data[i].ingredientes[ii];
+                        cadenita += data[i].ingredientes[ii];
                         ii++; 
                     } 
                     
                     cadenita += "~";
                     
                     while (data[i].cantidadIngrediente[j] != "~" && j<=data[i].cantidadIngrediente.length-1){
-                    cadenita += data[i].cantidadIngrediente[j];
+                        cadenita += data[i].cantidadIngrediente[j];
                         j++; 
                     }
                     
                     j++
+                    
                     if (ii<=data[i].ingredientes.length-1){
                         cadenita += "~";
                     }
                 }
                 
                 console.log("Cadenita 1:" + cadenita);
+                console.log("valor i:" + i);
                 
                 Tarjetas.innerHTML += `<div class="tarjetas">
                                             <div class="carta" name="cartita" id="${data[i].id}">
