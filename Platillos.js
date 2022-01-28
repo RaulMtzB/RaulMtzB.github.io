@@ -714,7 +714,7 @@ document.getElementById("Agregar").addEventListener('click', function(){
             fetch(Direccion,{method:'POST',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(platillo) }).then(respuesta =>{
                 return respuesta.json();
             }).then(data => {
-                console.log(data.id);
+                console.log("Editado = " + Editado);
                 if (Editado){
                     fetch(Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/platillo/" + data.id + "/imagenplatillo",{method:'POST', body: formData }).catch(console.error);
                     Editado = false;
