@@ -273,7 +273,7 @@ function ActualizaPlatillos(){
                     
                     cadenita += "~";
                     
-                    while (data[i].cantidadIngrediente[j] != "~" && ii<=data[i].cantidadIngrediente.length-1){
+                    while (data[i].cantidadIngrediente[j] != "~" && j<=data[i].cantidadIngrediente.length-1){
                     cadenita += data[i].cantidadIngrediente[j];
                         j++; 
                     }
