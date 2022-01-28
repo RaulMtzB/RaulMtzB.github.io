@@ -414,7 +414,6 @@ document.getElementById('Aceptar').addEventListener('click',function(){
                 cadenita += StringASeparar[i];
                     i++; 
             }
-            i++;
             if (IngOCant){
                 IngOCant = false;
                 if(Ingredientes == ""){
@@ -714,7 +713,6 @@ document.getElementById("Agregar").addEventListener('click', function(){
                 cadenita += StringASeparar[i];
                     i++; 
             }
-            i++;
             if (IngOCant){
                 IngOCant = false;
                 if(Ingredientes == ""){
