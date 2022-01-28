@@ -644,6 +644,7 @@ document.getElementById("AceptarCadenaIngredientes").addEventListener('click', f
     StrIngredientes = aux;
     console.log(StrIngredientes);
     document.getElementById('CadenaIngredientes').textContent = StrIngredientes;
+    console.log(document.getElementById('CadenaIngredientes').textContent)
     document.getElementById('PopListaIngredientes').style.display = "none";
 });
 
