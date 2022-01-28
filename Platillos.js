@@ -261,7 +261,7 @@ function ActualizaPlatillos(){
                 }else{
                     tipo = "F";
                 }
-                var cadenita;
+                var cadenita = "";
                 var j=0;
                 
                 console.log("ingredentes:" + data[i].ingredientes)
@@ -285,16 +285,12 @@ function ActualizaPlatillos(){
                     }
                     
                     j++
-                    cadenita += "~";
-                }
-                var k;
-                var cadenita2 = "";
-                for (k=0; k<cadenita.lenght-1; k++){
-                    cadenita2 += cadenita[k];
+                    if (ii<=data[i].ingredientes.length-1){
+                        cadenita += "~";
+                    }
                 }
                 
                 console.log("Cadenita 1:" + cadenita);
-                console.log("Cadenita 2:" + cadenita2);
                 
                 Tarjetas.innerHTML += `<div class="tarjetas">
                                             <div class="carta" name="cartita" id="${data[i].id}">
