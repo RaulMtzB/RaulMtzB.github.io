@@ -265,24 +265,25 @@ function ActualizaPlatillos(){
                 var cadenita2;
                 
                 data[i].cantidadIngrediente
-                j=0;
-                for (i=0; data[i].ingredientes.length; i++){
+                var j=0;
+                for (var ii=0; data[ii].ingredientes.length; ii++){
                     
-                    while (data[i].ingredientes[i] != "~" && i<=data[i].ingredientes.length-1){
-                    cadenita += data[i].ingredientes[i];
+                    while (data[ii].ingredientes[ii] != "~" && i<=data[ii].ingredientes.length-1){
+                    cadenita += data[ii].ingredientes[ii];
                         i++; 
                     } 
                     
                     cadenita += "~";
                     
-                    while (data[i].cantidadIngrediente[j] != "~" && i<=data[i].cantidadIngrediente.length-1){
-                    cadenita += data[i].cantidadIngrediente[j];
+                    while (data[ii].cantidadIngrediente[j] != "~" && i<=data[ii].cantidadIngrediente.length-1){
+                    cadenita += data[ii].cantidadIngrediente[j];
                         j++; 
                     }
                     
                     j++
                     cadenita += "~";
                 }
+                var k;
                 for (k=0; k<cadenita.lenght-1; k++)
                     cadenita2 = cadenita[k];
                 
