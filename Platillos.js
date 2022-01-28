@@ -271,7 +271,7 @@ function ActualizaPlatillos(){
                 
                 //Hola
                 
-                for (var ii=0; data[i].ingredientes.length; ii++){
+                for (var ii=0; ii<data[i].ingredientes.length; ii++){
                     
                     while (data[i].ingredientes[ii] != "~" && ii<=data[i].ingredientes.length-1){
                     cadenita += data[i].ingredientes[ii];
