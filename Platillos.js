@@ -288,9 +288,9 @@ function ActualizaPlatillos(){
                     cadenita += "~";
                 }
                 var k;
-                var cadenita2;
+                var cadenita2 = "";
                 for (k=0; k<cadenita.lenght-1; k++){
-                    cadenita2 = cadenita[k];
+                    cadenita2 += cadenita[k];
                 }
                 
                 console.log("Cadenita 1:" + cadenita);
