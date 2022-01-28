@@ -261,6 +261,33 @@ function ActualizaPlatillos(){
                 }else{
                     tipo = "F";
                 }
+                var cadenita;
+                var cadenita2;
+                
+                data[i].cantidadIngrediente
+                j=0;
+                for (i=0; data[i].ingredientes.length; i++){
+                    
+                    while (data[i].ingredientes[i] != "~" && i<=data[i].ingredientes.length-1){
+                    cadenita += data[i].ingredientes[i];
+                        i++; 
+                    } 
+                    
+                    cadenita += "~";
+                    
+                    while (data[i].cantidadIngrediente[j] != "~" && i<=data[i].cantidadIngrediente.length-1){
+                    cadenita += data[i].cantidadIngrediente[j];
+                        j++; 
+                    }
+                    
+                    j++
+                    cadenita += "~";
+                }
+                for (k=0; k<cadenita.lenght-1; k++)
+                    cadenita2 = cadenita[k];
+                
+                console.log(cadenita2);
+                
                 Tarjetas.innerHTML += `<div class="tarjetas">
                                             <div class="carta" name="cartita" id="${data[i].id}">
                                                 <img name="imagen" src="${data[i].imagen}" width="243px" height="130px" ${color}>
@@ -270,7 +297,7 @@ function ActualizaPlatillos(){
                                                     <p name="precio">${data[i].precio}</p>
                                                     <p class="NotShow" name="disponibilidad">${data[i].estado}</p>
                                                     <p class="NotShow" name="categoria">${data[i].categoria}</p>
-                                                    <p class="NotShow" name="ingredientesPlatillo">${data[i].ingredientes}</p>
+                                                    <p class="NotShow" name="ingredientesPlatillo">${cadenita2}</p>
                                                     <p class="NotShow" name="Tipo">${tipo}</p>
                                                 </div>
                                             </div>   
