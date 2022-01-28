@@ -301,7 +301,7 @@ function ActualizaPlatillos(){
                                                     <p name="precio">${data[i].precio}</p>
                                                     <p class="NotShow" name="disponibilidad">${data[i].estado}</p>
                                                     <p class="NotShow" name="categoria">${data[i].categoria}</p>
-                                                    <p class="NotShow" name="ingredientesPlatillo">${cadenita2}</p>
+                                                    <p class="NotShow" name="ingredientesPlatillo">${cadenita}</p>
                                                     <p class="NotShow" name="Tipo">${tipo}</p>
                                                 </div>
                                             </div>   
