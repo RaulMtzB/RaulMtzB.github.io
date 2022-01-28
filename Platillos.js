@@ -268,7 +268,9 @@ function ActualizaPlatillos(){
                 console.log("ingredentes:" + data[i].ingredientes)
                 console.log("cantidad: " + data[i].cantidadIngrediente)
                 
-                /*
+                
+                //Hola
+                
                 for (var ii=0; data[i].ingredientes.length; ii++){
                     
                     while (data[i].ingredientes[ii] != "~" && ii<=data[i].ingredientes.length-1){
@@ -287,9 +289,9 @@ function ActualizaPlatillos(){
                     cadenita += "~";
                 }
                 var k;
-                for (k=0; k<cadenita.lenght-1; k++)
+                for (k=0; k<cadenita.lenght-1; k++){
                     cadenita2 = cadenita[k];
-                */
+                }
                 
                 console.log(cadenita2);
                 
