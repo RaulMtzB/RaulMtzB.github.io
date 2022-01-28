@@ -644,7 +644,6 @@ document.getElementById("AceptarCadenaIngredientes").addEventListener('click', f
     StrIngredientes = aux;
     console.log(StrIngredientes);
     document.getElementById('CadenaIngredientes').textContent = StrIngredientes;
-    console.log(document.getElementById('CadenaIngredientes').textContent)
     document.getElementById('PopListaIngredientes').style.display = "none";
 });
 
@@ -700,7 +699,7 @@ document.getElementById("Agregar").addEventListener('click', function(){
         }
         
         
-        var StringASeparar = document.getElementById("CadenaIngredientes").textContent;
+        var StringASeparar = document.getElementById('CadenaIngredientes').textContent;
         var Ingredientes = "";
         var CantidadIngredientes = "";
         var IngOCant = true;
@@ -729,6 +728,9 @@ document.getElementById("Agregar").addEventListener('click', function(){
             }
         }
 
+        console.log(Ingredientes)
+        console.log(CantidadIngredientes)
+        
         let platillo = 
             {
                 "nombre" : nomPlat,
