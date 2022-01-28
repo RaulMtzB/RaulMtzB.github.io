@@ -7,6 +7,7 @@ var SelecIngrediente = document.getElementsByName('selecIngr');
 var Catselection;
 var IngrSelection;
 var StrIngredientes;
+var StrDireccionImg;
 var radios = document.getElementsByName('Opciones');
 
 var Editado = false;
@@ -85,6 +86,7 @@ function ActualizaSelecciónPlatillo(){
                 document.getElementById("Agregar").style.display = 'none';
                 document.getElementById("Aceptar").style.display = 'inline';
                 StrIngredientes = document.getElementsByName("ingredientesPlatillo")[index].textContent;
+                StrDireccionImg = document.getElementsByName("imagen")[index].src;
                 console.log(StrIngredientes);
             })
         })(i);
@@ -405,8 +407,8 @@ document.getElementById('Aceptar').addEventListener('click',function(){
                 "descripcion" : Descr,
                 "ingredientes" : Ingredientes, 
                 "cantidadIngrediente": CantidadIngredientes,
-                //"imagen" : "",
-                "descuento": "",
+                "imagen" : ,
+                "descuento": StrDireccionImg,
                 "precio" : Precio,
                 "estado" : disp,
                 "categoria": document.getElementById('ElijeCategoria').options[document.getElementById('ElijeCategoria').selectedIndex].value,
