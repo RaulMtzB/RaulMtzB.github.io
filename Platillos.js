@@ -293,6 +293,7 @@ function ActualizaPlatillos(){
                     cadenita2 = cadenita[k];
                 }
                 
+                console.log("Cadenita 1:" + cadenita);
                 console.log("Cadenita 2:" + cadenita2);
                 
                 Tarjetas.innerHTML += `<div class="tarjetas">
