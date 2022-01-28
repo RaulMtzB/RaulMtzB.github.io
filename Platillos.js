@@ -728,8 +728,8 @@ document.getElementById("Agregar").addEventListener('click', function(){
             }
         }
 
-        console.log(Ingredientes)
-        console.log(CantidadIngredientes)
+        console.log("Ingredientes: " + Ingredientes)
+        console.log("Cantidad Ingredientes: " + CantidadIngredientes)
         
         let platillo = 
             {
