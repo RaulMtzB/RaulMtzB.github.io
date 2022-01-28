@@ -265,8 +265,8 @@ function ActualizaPlatillos(){
                 var cadenita2;
                 var j=0;
                 
-                console.log(data[i].ingredientes)
-                console.log(data[i].cantidadIngrediente)
+                console.log("ingredentes:" + data[i].ingredientes)
+                console.log("cantidad: " + data[i].cantidadIngrediente)
                 
                 /*
                 for (var ii=0; data[i].ingredientes.length; ii++){
