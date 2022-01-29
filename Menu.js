@@ -104,10 +104,11 @@ document.getElementById('AceptarMenu').addEventListener('click',function(){
         var Cajitas = document.getElementsByName('AlmacenarPlatillo')
         var infoPlatillo = document.getElementsByName('DataPlatillo')
         var value = select.options[select.selectedIndex].id;
-        var NombrandoMenu;
+        var NombrandoMenu = "";
         for (var z=0; z<document.getElementById('NombreMenu').value.length-9; z++){
             NombrandoMenu += document.getElementById('NombreMenu').value[z];
         }
+        console.log(NombrandoMenu);
         selecMenu = value;
         for(var i=0; i<Cajitas.length; i++){
             if (Cajitas[i].checked){
@@ -117,7 +118,7 @@ document.getElementById('AceptarMenu').addEventListener('click',function(){
         const Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/menu/" + selecMenu; //Esta dirección es solo de prueba
         let Categoria = 
             {
-                "nombre" : document.getElementById('NombreMenu').value,
+                "nombre" : NombrandoMenu,
                 "status" : true,
                 "platillos" : CadenaPlatillosMenu
             }
