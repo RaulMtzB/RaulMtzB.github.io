@@ -533,7 +533,10 @@ function ActualizaSeleccionAsientos(){
                 "nombre" : document.getElementById("NombreMesero").value
             }
 
+            console.log("Reliza peticion xDDDDDDD")
+            
             fetch(Direccion,{method:'POST',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Categoria) }).then(respuesta =>{
+                console.log("Actualiza meseros xDDDDDDD")
                 ActualizaMeseros();
                 return respuesta.json()
             }).then(data =>{
