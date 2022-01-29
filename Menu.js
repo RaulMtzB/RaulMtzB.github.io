@@ -104,6 +104,10 @@ document.getElementById('AceptarMenu').addEventListener('click',function(){
         var Cajitas = document.getElementsByName('AlmacenarPlatillo')
         var infoPlatillo = document.getElementsByName('DataPlatillo')
         var value = select.options[select.selectedIndex].id;
+        var NombrandoMenu;
+        for (var z=0; z<document.getElementById('NombreMenu').value.length-9; z++){
+            NombrandoMenu += document.getElementById('NombreMenu').value[z];
+        }
         selecMenu = value;
         for(var i=0; i<Cajitas.length; i++){
             if (Cajitas[i].checked){
@@ -201,7 +205,7 @@ function ActualizaMenus(){
         ListaMenus.innerHTML = `<option value="ninguno" selected>Ninguna</option>`;            
         for(var i=0; i<data.length; i++){
             if (data[i].status){
-                activo = "Activo"
+                activo = "Activo "
             }else{
                 activo = "Pausado"
             }
