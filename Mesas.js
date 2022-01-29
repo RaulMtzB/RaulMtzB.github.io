@@ -204,15 +204,17 @@ function ActualizaMeseros(){
         ActualizaSeleccionMeseros();
     }).catch(console.error)
     
-
-function ActualizaSeleccionMeseros(){
-    console.log("El Fer")
-    console.log("Meseros:" + SelecMesero.length);
     document.getElementById('AgregarMesero').addEventListener('click',function(){
         document.getElementById('PopCrearMesero').style.display = 'flex';
         document.getElementById("NombreMesero").style.borderColor = 'white';
         document.getElementById("NombreMesero").value = "";
     });
+
+function ActualizaSeleccionMeseros(){
+    console.log("El Fer")
+    console.log("Meseros:" + SelecMesero.length);
+    
+
     for(var i = 0; i < SelecMesero.length; i++) {
         console.log("entra");
         (function(index) {
@@ -525,7 +527,6 @@ function ActualizaSeleccionAsientos(){
     document.getElementById('CrearMesero').addEventListener('click', function(){
         if (document.getElementById("NombreMesero").value != ""){
             document.getElementById('PopCrearMesero').style.display = 'none';
-            document.getElementById('PopCrearMesero').removeEventListener("click");
             let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/meseros";
 
             let Categoria = 
