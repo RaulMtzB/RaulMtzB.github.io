@@ -129,6 +129,7 @@ document.getElementById('AceptarMenu').addEventListener('click',function(){
             }).then(data =>{
                 console.log(data);
             }).catch(console.error);
+        document.getElementById('PopMenu').style.display = 'none';
     }else
         alert("Favor de colocarle un nombre al menú");
 });
