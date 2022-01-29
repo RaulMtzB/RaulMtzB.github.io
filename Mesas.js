@@ -525,7 +525,7 @@ function ActualizaSeleccionAsientos(){
     document.getElementById('CrearMesero').addEventListener('click', function(){
         if (document.getElementById("NombreMesero").value != ""){
             document.getElementById('PopCrearMesero').style.display = 'none';
-
+            document.getElementById('PopCrearMesero').removeEventListener("click");
             let Direccion = Restaurante.getRestauranteURLC()  + Restaurante.getRestauranteid() + "/meseros";
 
             let Categoria = 
