@@ -96,6 +96,60 @@ function ActualizaSelecciónMesa() {
     }
 }
 
+
+//ver info de cliente actualizable
+function ActualizaVerInfoCliente() {
+    console.log("Asientos:" + SelecCliente.length);
+    for (var i = 0; i < SelecCliente.length; i++) {
+        (function (index) {
+            SelecCliente[index].addEventListener("click", function () {
+                console.log(index);
+                indiceCliente = index;
+                console.log("Clicked index: " + SelecCliente[index].id);
+                ClienteSeleccionado = SelecCliente[index].id;
+                billSelection = document.getElementsByName('IDBill')[index].id;
+                console.log(billSelection)
+                const Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/bills/" + SelecCliente[index].id; //pendiente la dirección.
+                fetch(Direccion, { method: 'GET' }).then(respuesta => {
+                    return respuesta.json()
+                }).then(data => {
+                    console.log(data)
+                    document.getElementById('VerNombreCliente').textContent = document.getElementsByName('NombreDelCliente')[index].textContent
+                    document.getElementById('PopVerInfoCliente').style.display = 'flex';
+                    if (document.getElementById(index).getAttribute("name") == "Pagado") {
+                        document.getElementById('BotonPagarCliente').style.display = 'none';
+                        document.getElementById('BotonAgregarProductoCliente').style.display = 'none';
+                    } else {
+                        document.getElementById('BotonPagarCliente').style.display = 'inline';
+                        document.getElementById('BotonAgregarProductoCliente').style.display = 'inline';
+                    }
+                    document.getElementById("TablaProductosCliente").innerHTML = "";
+                    for (var j = 0; j < data.products.length; j++) {
+                        document.getElementById("TablaProductosCliente").innerHTML +=
+                            `
+                        <tr>
+                            <td class="seleccionable" id="${data.products[j].id}" name="SeleccionaProductoCliente">${data.products[j].name}</td>
+                            <td>${data.products[j].price}</td>
+                        </tr>
+                        `
+                    }
+
+                    for (var k = 0; k < document.getElementsByName('SeleccionaProductoCliente').length; k++) {
+                        (function (indice) {
+                            document.getElementsByName('SeleccionaProductoCliente')[indice].addEventListener("click", function () {
+                                SelecProdCliente = document.getElementsByName('SeleccionaProductoCliente')[indice].id;
+                                console.log(SelecProdCliente);
+                            })
+                        })(k);
+                    }
+
+
+                }).catch(console.error)
+            })
+        })(i);
+    }
+}
+
 function ActualizaContenidoMesa() {
     let Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection;
     console.log("ID: " + Tableselection);
@@ -366,58 +420,6 @@ function ActualizaMeseros() {
         document.getElementById('PopEgresosIngresos').style.display = 'flex';
     })*/
 
-    //ver info de cliente actualizable
-    function ActualizaVerInfoCliente() {
-        console.log("Asientos:" + SelecCliente.length);
-        for (var i = 0; i < SelecCliente.length; i++) {
-            (function (index) {
-                SelecCliente[index].addEventListener("click", function () {
-                    console.log(index);
-                    indiceCliente = index;
-                    console.log("Clicked index: " + SelecCliente[index].id);
-                    ClienteSeleccionado = SelecCliente[index].id;
-                    billSelection = document.getElementsByName('IDBill')[index].id;
-                    console.log(billSelection)
-                    const Direccion = Restaurante.getRestauranteURLR() + Restaurante.getRestauranteid() + "/tables/" + Tableselection + "/bills/" + SelecCliente[index].id; //pendiente la dirección.
-                    fetch(Direccion, { method: 'GET' }).then(respuesta => {
-                        return respuesta.json()
-                    }).then(data => {
-                        console.log(data)
-                        document.getElementById('VerNombreCliente').textContent = document.getElementsByName('NombreDelCliente')[index].textContent
-                        document.getElementById('PopVerInfoCliente').style.display = 'flex';
-                        if (document.getElementById(index).getAttribute("name") == "Pagado") {
-                            document.getElementById('BotonPagarCliente').style.display = 'none';
-                            document.getElementById('BotonAgregarProductoCliente').style.display = 'none';
-                        } else {
-                            document.getElementById('BotonPagarCliente').style.display = 'inline';
-                            document.getElementById('BotonAgregarProductoCliente').style.display = 'inline';
-                        }
-                        document.getElementById("TablaProductosCliente").innerHTML = "";
-                        for (var j = 0; j < data.products.length; j++) {
-                            document.getElementById("TablaProductosCliente").innerHTML +=
-                                `
-                            <tr>
-                                <td class="seleccionable" id="${data.products[j].id}" name="SeleccionaProductoCliente">${data.products[j].name}</td>
-                                <td>${data.products[j].price}</td>
-                            </tr>
-                            `
-                        }
-
-                        for (var k = 0; k < document.getElementsByName('SeleccionaProductoCliente').length; k++) {
-                            (function (indice) {
-                                document.getElementsByName('SeleccionaProductoCliente')[indice].addEventListener("click", function () {
-                                    SelecProdCliente = document.getElementsByName('SeleccionaProductoCliente')[indice].id;
-                                    console.log(SelecProdCliente);
-                                })
-                            })(k);
-                        }
-
-
-                    }).catch(console.error)
-                })
-            })(i);
-        }
-    }
 
     document.getElementById('BotonPagarCliente').addEventListener('click', function () {
         var today = new Date();
