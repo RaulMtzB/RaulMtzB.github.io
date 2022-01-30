@@ -402,6 +402,7 @@ function ActualizaMeseros() {
             return respuesta.json()
         }).then(data => {
             for (var i = 0; i < data.seats.length; i++) { //qrCodeURL
+                console.log("URL del asiento" + data.seats[i].qrCodeURL);
                 document.getElementById('ContenedorQRS').innerHTML += `
             <i class="seleccionable fas fa-qrcode" style="font-size: 100px; position: relative; color: black; padding: 10px;">
             <i name="EliminarAsiento" class="material-icons" style="top: 0px; left:-12px; cursor: pointer; font-size: 25px; position: absolute; color: red; padding: 10px;">remove_circle</i>
@@ -412,7 +413,6 @@ function ActualizaMeseros() {
             </i>`
             }
             ActualizaSeleccionAsientos();
-            console.log("URL del asiento" + data.seats[i].qrCodeURL);
         }).catch(console.error)
     }
 
