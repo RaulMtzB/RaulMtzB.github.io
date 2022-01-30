@@ -243,8 +243,8 @@ function ActualizaMeseros() {
                     console.log(index);
                     console.log("Clicked index: " + SelecAsiento[index].id);
                     SeatSelection = SelecAsiento[index].id;
-                    console.log("URL:" + document.getElementsByName('URLQR')[index].textcontent);
-                    document.getElementById("QrImprimible").src = document.getElementsByName('URLQR')[index].textcontent;
+                    console.log("clicked URL:" + document.getElementsByName('URLQR')[index].innerHTML);
+                    document.getElementById("QrImprimible").src = document.getElementsByName('URLQR')[index].innerHTML;
                 })
                 document.getElementsByName("EliminarAsiento")[index].addEventListener("click", function () {
 
