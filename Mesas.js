@@ -358,7 +358,7 @@ function ActualizaMeseros() {
             </i>`
             }
             ActualizaSeleccionAsientos();
-            console.log("URL del asiento" + data.seats[i].qrCodeURL;
+            console.log("URL del asiento" + data.seats[i].qrCodeURL);
         }).catch(console.error)
     }
 
