@@ -529,7 +529,8 @@ function ActualizaMeseros() {
 
 
     document.getElementById('CrearMesero').addEventListener('click', function () {
-        if (document.getElementById("NombreMesero").value != "") {
+        console.log("Checa, wey");
+        /*if (document.getElementById("NombreMesero").value != "") {
             document.getElementById('PopCrearMesero').style.display = 'none';
             let Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/meseros";
 
@@ -550,7 +551,7 @@ function ActualizaMeseros() {
 
         } else {
             document.getElementById("NombreMesero").style.borderColor = 'red';
-        }
+        }*/
     })
 
     document.getElementById('SiguientePagoMesa').addEventListener('click', function () {
