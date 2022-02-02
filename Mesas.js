@@ -529,7 +529,6 @@ function ActualizaMeseros() {
 
 
     document.getElementById('CrearMesero').addEventListener('click', function () {
-        //console.log("Checa, wey");
         if (document.getElementById("NombreMesero").value != "") {
             document.getElementById('PopCrearMesero').style.display = 'none';
             let Direccion = Restaurante.getRestauranteURLC() + Restaurante.getRestauranteid() + "/meseros";
@@ -539,16 +538,14 @@ function ActualizaMeseros() {
                 "nombre": document.getElementById("NombreMesero").value
             }
 
-            console.log("Reliza peticion xDDDDDDD")
-//             ActualizaMeseros();
 
-//             fetch(Direccion, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Categoria) }).then(respuesta => {
-//                 console.log("Actualiza meseros xDDDDDDD")
-//                 ActualizaMeseros();
-//                 return respuesta.json()
-//             }).then(data => {
-//                 console.log(data);
-//             }).catch(console.error);
+             fetch(Direccion, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Categoria) }).then(respuesta => {
+                 console.log("Actualiza meseros xDDDDDDD")
+                 ActualizaMeseros();
+                 return respuesta.json()
+             }).then(data => {
+                 console.log(data);
+             }).catch(console.error);
 
         } else {
             document.getElementById("NombreMesero").style.borderColor = 'red';
