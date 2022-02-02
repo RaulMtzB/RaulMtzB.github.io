@@ -402,14 +402,14 @@ function ActualizaMeseros() {
             return respuesta.json()
         }).then(data => {
             for (var i = 0; i < data.seats.length; i++) { //qrCodeURL
-                console.log("URL del asiento" + data.seats[i].qrCodeURL);
+                console.log("URL del asiento" + data.seats[i].qrCodeUrl);
                 document.getElementById('ContenedorQRS').innerHTML += `
             <i class="seleccionable fas fa-qrcode" style="font-size: 100px; position: relative; color: black; padding: 10px;">
             <i name="EliminarAsiento" class="material-icons" style="top: 0px; left:-12px; cursor: pointer; font-size: 25px; position: absolute; color: red; padding: 10px;">remove_circle</i>
                 <i name="AsientoQR" id="${data.seats[i].id}" style="font-size: 15px; color: white; background-color: #224abe; padding: 5px; border-radius: 50%; position: absolute; left:85px; top: 0px; cursor: pointer; height: 25px; height: 25px;">
                     ${data.seats[i].id}
                 </i>
-                <div name="URLQR" class="NotShow">${data.seats[i].qrCodeURL}</div>
+                <div name="URLQR" class="NotShow">${data.seats[i].qrCodeUrl}</div>
             </i>`
             }
             ActualizaSeleccionAsientos();
