@@ -540,7 +540,7 @@ function ActualizaMeseros() {
             }
 
             console.log("Reliza peticion xDDDDDDD")
-            ActualizaMeseros();
+//             ActualizaMeseros();
 
 //             fetch(Direccion, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Categoria) }).then(respuesta => {
 //                 console.log("Actualiza meseros xDDDDDDD")
